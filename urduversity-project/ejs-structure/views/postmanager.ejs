@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+<%- include("partials/mininav"); -%>
+
+<div class="center-ceontent">
+  <h1 class="mb-5 text-center">پوسٹ مینیجر</h1>
+
+  <% categories.forEach((category) => { %>
+    <h2><%= category %></h2>
+    <table class="table-bordered">
+      <tr>
+        <th class="mx-auto" style="width: 200px; text-align: center;">Title</th>
+        <th class="mx-auto" style="width: 200px; text-align: center;">Delete</th>
+      </tr>
+      <% posts.filter(post => post.category === category).forEach((post) => { %>
+        <tr>
+          <td class="mx-auto" style="width: 200px;">
+            <a href="<%= `/${post.category}/${post.title}` %>"><%= post.title %></a>
+          </td>
+          <td class="mx-auto" style="width: 200px; text-align: center;">
+            <a href="/delete/<%= encodeURIComponent(post.title) %>">
+              <i class="fa-solid fa-trash-can"></i>
+            </a>
+          </td>
+        </tr>
+      <% }); %>
+    </table>
+  <% }); %>
+
+</div>
+
+<%- include("partials/footer"); -%>

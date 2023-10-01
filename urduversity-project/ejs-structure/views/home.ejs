@@ -1,0 +1,164 @@
+<%- include("partials/header"); -%>
+    <%- include("partials/left-sidebar"); -%>
+
+        <!-- center div start -->
+
+        <div id="content" class="center-div content serchFilter">
+            <div id="searchResults"></div>
+            <div class="center-ceontent">
+                <div id="frontbanner" class="center-ceontent">
+                    <div id="frontbanner-home">
+                        <% frontbanner.reverse().forEach(function(post){ %>
+                            <div>
+                                <h2 class="mb-4 text-center" >
+                                    <a class="hrefText" href="/frontbanner/<%- post.title -%>">
+                                        <%= post.title %>
+                                    </a>
+                                </h2>
+                                <p>
+                                    <%= post.content %>
+                                </p>
+                                <div>
+                                    <% const fileExtension=post.fileToUpload.split('.').pop().toLowerCase(); %>
+                                        <% if (['jpg', 'jpeg' , 'png' , 'gif' ].includes(fileExtension)) { %>
+                                            <!-- Render image -->
+                                            <img class="mt-5" src="/images/<%= post.fileToUpload %>"
+                                                alt="Uploaded Image" width="600px">
+                                            <% } else if (['mp4', 'webm' , 'ogg' ].includes(fileExtension)) { %>
+                                                <!-- Render video -->
+                                                <video class="mt-5" width="600px" controls>
+                                                    <source src="/videos/<%= post.fileToUpload %>"
+                                                        type="video/<%= fileExtension %>">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <% } else if (fileExtension==='pdf' ) { %>
+                                                    <!-- Render PDF -->
+                                                    <div class="mt-5">
+                                                        <a href="/pdfs/<%= post.fileToUpload %>#toolbar=0">[click to
+                                                            enlarg]</a><br>
+                                                        <embed class="" src="/pdfs/<%= post.fileToUpload %>#toolbar=0"
+                                                            width="400px" height="400px" type="application/pdf">
+                                                    </div>
+                                                    <% } else { %>
+                                                        <!-- If the file type is not supported, display a message -->
+                                                        <!-- for example: <p> media not found</p> -->
+                                                        <% } %>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+                <!-- cards start -->
+
+                <div class="center-ceontent">
+                    <div class="card-group text-right ">
+                        <div class="card m-1">
+                            <img class="card-img-top" src="images/ilv-images/interviews.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <a href="/interviews">
+                                    <h5 class="card-title">انٹرویوز</h5>
+                                </a>
+                                <p class="card-text">جدید ملکی اور بین الاقوامی تناظر میں لیجنڈری شخصیات اور سکالرز کے
+                                    انٹرویوز</p>
+                            </div>
+                        </div>
+                        <div class="card m-1">
+                            <img class="card-img-top" src="images/ilv-images/lectures.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <a href="/lectures">
+                                    <h5 class="card-title">لیکچرز</h5>
+                                </a>
+                                <p class="card-text">مختلف ملکوں اور شہروں میں منعقد ہونے والے لیکچرز، کانفرنسز اور
+                                    سیمینارز
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card m-1">
+                            <img class="card-img-top" src="images/ilv-images/videos.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <a href="/videos">
+                                    <h5 class="card-title">ویڈیوز</h5>
+                                </a>
+                                <p class="card-text">مختلف شہروں میں منعقد ہونے والی ادبی تقریبات کی ویڈیوز</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- cards end -->
+
+
+
+
+                <div id="interviews" class="center-ceontent">
+                    <h1 class="mb-5 text-center">انٹرویوز</h1>
+
+                    <div id="interviews-home" class="composed-post-list">
+                        <% interviews.reverse().forEach(function(post){ %>
+                            <div class="card-list">
+                                <h2 class="mb-4">
+                                    <%= post.title %>
+                                </h2>
+                                <p>
+                                    <%= post.content.substring(0, 50) + '...' %>
+                                        <br><a href="/interviews/<%- post.title -%>">مزید پڑھیں</a>
+                                </p>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <a class="btn btn-custome mr-3" href="/interviews">مزید دیکھیں</a>
+                </div>
+
+
+                <div id="lectures" class="center-ceontent">
+                    <h1 class="mb-5 text-center">لیکچرز</h1>
+
+                    <div id="lectures-home" class="composed-post-list">
+                        <% lectures.forEach(function(post){ %>
+                            <div class="card-list">
+                                <h2 class="mb-4">
+                                    <%= post.title %>
+                                </h2>
+                                <p>
+                                    <%= post.content.substring(0, 50) + '...' %>
+                                        <br><a href="/lectures/<%- post.title -%>">مزید پڑھیں</a>
+                                </p>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <a class="btn btn-custome mr-3" href="/lectures">مزید دیکھیں</a>
+                </div>
+
+                <div id="videos" class="center-ceontent">
+                    <h1 class="mb-5 text-center"> دیگر ویڈیوز</h1>
+
+                    <div id="videos-home" class="composed-post-list">
+                        <% videos.forEach(function(post){ %>
+                            <div class="card-list">
+                                <h2 class="mb-4">
+                                    <%= post.title %>
+                                </h2>
+                                <p>
+                                    <%= post.content.substring(0, 50) + '...' %>
+                                        <br><a href="/videos/<%- post.title -%>">مزید معلومات</a>
+                                </p>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <a class="btn btn-custome mr-3" href="/videos">مزید دیکھیں</a>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- center div end -->
+
+
+        <%- include("partials/right-sidebar"); -%>
+            <%- include("partials/footer"); -%>

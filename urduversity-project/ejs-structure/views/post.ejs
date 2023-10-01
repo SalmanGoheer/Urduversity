@@ -1,0 +1,49 @@
+<%- include("partials/header"); -%>
+     <div class="center-ceontent">  
+    <h1 class="mb-4"><%= title %></h1>
+    <div class="d-flex justify-content-center mt-4 mb-4">
+        <div>
+            <% const fileExtension = fileToUpload.split('.').pop().toLowerCase(); %>
+            <% if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) { %>
+                <!-- Render image -->
+                <img class="mt-5" src="/images/<%= fileToUpload %>" alt="Uploaded Image" width="600px">
+            <% } else if (['mp4', 'webm', 'ogg'].includes(fileExtension)) { %>
+                <!-- Render video -->
+                <video class="mt-5" width="600px" controls>
+                    <source src="/videos/<%= fileToUpload %>" type="video/<%= fileExtension %>">
+                    Your browser does not support the video tag.
+                </video>
+            <% } else if (fileExtension === 'pdf') { %>
+                <!-- Render PDF -->
+                <div class="mt-5">
+                    <a  href="/pdfs/<%= fileToUpload %>#toolbar=0">[click to enlarg]</a><br>
+                    <embed class="" src="/pdfs/<%= fileToUpload %>#toolbar=0" width="400px" height="400px" type="application/pdf">
+                </div>
+            <% } else { %>
+                <!-- If the file type is not supported, display a message -->
+                <!-- for example: <p> media not found</p> -->
+            <% } %>
+        </div>
+    </div>
+    
+    <pre style="font-size: 1.5rem; font-family: 'Noto Naskh Arabic', serif;">
+        <%= content %>
+    </pre>
+    
+    </div>
+<%- include("partials/footer"); -%>
+<script>
+    const fileInput = document.getElementById('fileToUpload');
+
+    fileInput.addEventListener('change', (event) => {
+        const selectedFile = event.target.files[0];
+        console.log('Selected File:', selectedFile);
+        // You can add additional code here to handle the file or display its details.
+    });
+</script>
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+
+

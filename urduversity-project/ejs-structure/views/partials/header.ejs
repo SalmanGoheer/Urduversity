@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- bootstrap cdn -->
+    <!-- custome stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- custome stylesheet -->
+
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <!-- font -->
+    <!-- favicon -->
+    <script src="https://kit.fontawesome.com/513acf962c.js" crossorigin="anonymous"></script>
+    <!-- favicon -->
+
+    <title>Template Urdupedia</title>
+
+
+    <!-- navbar start -->
+  
+</head>
+
+<body>
+
+
+<div class="nav-logo text-center p-3 d-none d-md-block">
+    <a class="navbar-brand" href="/">
+        <img src="http://localhost:3000/images/logo1.png" height="100" />
+    </a>
+</div>
+
+<nav class="navbar navbar-expand-lg " id="headerNav">
+    <div class="container-fluid">
+        <a class="navbar-brand d-block d-lg-none" href="/">
+            <img src="http://localhost:3000/images/logo1.png" height="100" />
+        </a>
+        <button class="navbar-toggler border border-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon bg.transparent"><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse mb-3" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link mx-2" aria-current="page" href="/"> ہوم</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2" href="/about">تعارف </a>
+                </li>
+                <li class="nav-item d-none d-lg-block">
+                    <!-- <form  class="form-inline my-2 my-lg-0">
+                        <input id="searchInput" class="form-control mr-sm-2" type="text" name="search" placeholder="تلاش کریں..." aria-label="Search">
+                        <button class="btn btn-custome mr-4" type="submit" value="search">تلاش کریں</button>
+                      </form> -->
+                      <form class="form-inline my-2 my-lg-0">
+                        <input id="searchInput" class="form-control mr-sm-2" type="text" name="search" placeholder="تلاش کریں..." aria-label="Search">
+                      </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2" href="/contact"> رابطہ </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2" href="/akhbar">ادبی اخبار</a>
+                </li>
+                <li class="nav-item d-block d-lg-none">
+                    <form action="/search" method="get" class="form-inline my-2 my-lg-0">
+                        <input id="searchInput" class="form-control mr-sm-2" type="text" name="query" placeholder="تلاش کریں..." aria-label="Search">
+                        <!-- <button class="btn btn-custome mr-4" type="submit">تلاش کریں</button> -->
+                      </form>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+<!-- <script>
+    var search = "";
+    if(req.query.search){
+        search = req.query.search;
+    }
+</script> -->
+
+
+

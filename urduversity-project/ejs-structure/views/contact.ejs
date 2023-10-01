@@ -1,0 +1,177 @@
+<%- include("partials/header"); -%>
+  <div class="contact-section container-fluid">
+    <div class="contactContent mx-auto">
+      <p>
+        <%= contactContent %>
+      </p>
+    </div>
+    <div class="contact-form mx-auto">
+
+      <h1 class="text-center ">رابطہ کریں</h1>
+
+
+      <!--  -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+        <div class="col mb-5">
+          <div class="card h-100  card-contact">
+            <div class="card-body">
+              <i class="fa-contact fa-solid fa-location-dot"></i>
+              <h5 class="card-title">پتہ: </h5>
+              <p class="card-text">سکالرز ہاوس 19/29 عبداللہ پور، فیصل آباد، پاکستان۔</p>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-5">
+          <div class="card h-100 card-contact">
+            <div class="card-body">
+              <i class="fa-contact fa-solid fa-phone"></i>
+              <h5 class="card-title">فون نمبر:</h5>
+              <p class="card-text">9234012345678+</p>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-5">
+          <div class="card h-100 card-contact">
+            <div class="card-body">
+              <i class="fa-contact fa-solid fa-paper-plane"></i>
+              <h5 class="card-title">ای میل:</h5>
+              <p class="card-text">example@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+
+      <!--  googlemap location-->
+      <div class="d-flex justify-content-center mb-5 pb-5">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6798.26534929901!2d73.4317603!3d31.5754094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392275a7df6030d5%3A0xac819c8d982433ec!2sChaukarian%2C%20Nankana%20Sahib%2C%20Punjab!5e0!3m2!1sen!2s!4v1689341548224!5m2!1sen!2s"
+          width="400" height="300" style="border:1;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <!--  -->
+
+      <h1 class="text-center mb-5"> ہمیں اپنا پیغام بھیجیں </h1>
+      <form action="/contact" enctype="multipart/form-data" method="post">
+        <div class="mb-3">
+          <input type="text" class="form-control" name="name" placeholder="اپنا نام درج کریں" required>
+        </div>
+        <div class="mb-3">
+          <input type="tel" class="form-control" name="phone" placeholder="اپنا فون نمبر درج کریں" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" name="email" placeholder="اپنا ای میل ایڈریس درج کریں" required>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" name="message" rows="10" placeholder="اپنا پیغام درج کریں" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="file">فائل منتخب کریں (فقط docs, jpg, pdf, mp4)</label>
+          <input type="file" id="file" name="file" accept="image/*, video/*, .pdf">
+        </div>
+
+        <div class="mb-3">
+          <h5>رابطے کا مقصد منتخب کیجیے</h5>
+          <div class="form-check m-3">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="flexRadioDefault1" >
+            <label class="pr-3 form-check-label" for="flexRadioDefault1">تجویز/ مشورہ</label>
+
+          </div>
+          <div class="form-check m-3">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="flexRadioDefault2" >
+            <label class="pr-3 form-check-label" for="flexRadioDefault2" >اپنی کتاب/ مضمون کی اردو ورسٹی میں
+              اشاعت</label>
+
+          </div>
+          <div class="form-check m-3">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="flexRadioDefault3" >
+            <label class="pr-3 form-check-label" for="flexRadioDefault3">کسی مشاعرے، لیکچر یا کانفرنس وغیرہ کی ویڈیو
+              ارسال کرنا </label>
+
+          </div>
+          <div class="form-check m-3">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="flexRadioDefault4" >
+            <label class="pr-3 form-check-label" for="flexRadioDefault4">دیگر </label>
+
+          </div>
+
+        </div>
+
+        <div class="mt-5 mb-3">
+          <div class="form-check">
+            <input class="mt-3 form-check-input" type="checkbox" value="" id="flexCheckDisabled required">
+            <label class="pr-3 form-check-label " for="flexCheckDisabled">
+              <p class="privacy-check-label">میں <a class="p-t-links" data-bs-toggle="modal" data-bs-target="#privacyModel">پرائیویسی پالیسی</a> اور تمام <a class="p-t-links" data-bs-toggle="modal"
+                  data-bs-target="#termsModal">شرائط و ضوابط</a> سے متفق ہوں۔</p>
+            </label>
+            <!--  -->
+            <!-- Modal 1 -->
+            <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">شرائط و ضوابط</h5>
+                  </div>
+                  <div class="modal-body">
+                  
+                    <li>تحریری یا تصویری مواد آپ کا اپنا ہونا چاہیے۔ اس کا کوئی اور دعوے دار نہیں ہونا چاہیے۔</li> 
+                    <li>آپ کا تحریری مواد MS Word یا PDF فارمیٹ میں ہونا چاہیے۔</li>
+                    <li>اپنے ملکیتی تصویری مواد کے لیے آپ اس کا لنک بھی شئیر کر سکتے ہیں اور اصل ویڈیو بھی۔</li>
+                    <li>تحریری مواد کا عنوان اور تصویری مواد کا Thumbnail اردو کے ساتھ رومن میں بھی تحریر ہونا چاہیے۔ </li>
+                    <li>تحریری مواد کے لیے کلیدی الفاظ (Keywords) کا موزوں انتخاب بھی آپ کی ذمے داری ہے تاہم ایڈیٹر کو ترمیم و تنسیخ کا حق حاصل ہے۔</li>
+                    <li>مخرب اخلاق تحریری اور تصویری مواد ہرگز ارسال نہ کریں۔</li>
+                  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- Modal2 -->
+            <div class="modal fade" id="privacyModel" tabindex="-1" aria-labelledby="privacyModelLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModelLabel">پرائیویسی پالیسی</h5>
+                  </div>
+                  <div class="modal-body">
+                    <!-- <ul> -->
+                      <li>اردو ورسٹی، تحقیق و تنقید کے میدان میں مصروفِ عمل، ایک غیر منافع بخش ویب سائٹ ہے جس کی کوئی Subscription فیس نہیں ہے۔</li>
+                      <li>اس کا مقصد تحقیق و تنقید میں مصروف محققین و ناقدین اور اساتذہ و طلبہ کے کام کو آسان بنانا ہے لہٰذا ان حضرات کو درکار مواد تک رسائی کے لیے آسان Interface کے علاوہ محدود پیمانے پر ڈاؤن لوڈنگ کی سہولت بھی فراہم کی گئی ہے تاکہ کاروباری حضرات اس سہولت سے ناجائز فائدہ حاصل نہ کر سکیں، صرف محققین ہی اس سے فائدہ اٹھا سکیں۔</li>
+                      <li>اردو ورسٹی کا منصوبہ بے حد وسیع اور لا مختتم ہے۔ ہم نے ہزاروں مضامین اپلوڈ کرکے اس کبھی نہ ختم ہونے والے سلسلے اور کبھی مکمل نہ ہونے والے عظیم منصوبے کا صرف آغاز کیا ہے۔</li>
+                      <li>اس منصوبے کو پایہٴ تکمیل تک پہنچانے کے لیے نہیں بل کہ صرف آگے بڑھانے کے لیے تمام انسانی وسائل کو استعمال میں لانا ضروری ہے۔</li>
+                      <li>اس مقصد کے لیے جہاں اس سے استفادے کے دروازے کھلے رکھے گئے ہیں وہاں اہل علم کو بھی اس کارِ خیر میں کچھ شرائط کے ساتھ، شرکت کی دعوت دی گئی ہے تاکہ علم کی سرحدوں کو وسیع سے وسیع تر کیا جا سکے۔</li>
+                      <li>تحریری اور تصویری مواد بھیجنے والے شخص یا ادارے کو  متنبہ کیا جاتا ہے کہ حقوقِ  دانش کی مکمل پاس داری کی جائے اور چربہ یا علمی سرقہ (Plagiarism) پر مبنی مواد اردو ورسٹی کو ہرگز ارسال نہ کیا جائے۔</li>
+                      <li>علم کی سرحدوں کو وسیع کرنے کے کام میں چوں کہ ہمارے اور آپ کے علاوہ Third Party کی شراکت ضروری ہے اس لیے اگر کسی کی طرف سے حقوقِ دانش Intelectual Property Rights کی خلاف ورزی اور چربہ سازی یا علمی سرقہ Plagiarism کا ارتکاب ہوا تو اردو ورسٹی اس مواد سے نہ صرف برّیت کا اظہار کرتی ہے بل کسی صارف کی طرف سے علم میں لانے پر اُسے ویب سائٹ سے ہٹانے کی پابند ہوگی۔</li>
+                      <li>کسی بھی تنازعے کی صورت میں صرف فیصل آباد (پاکستان) کی عدالت میں کیس دائر کیا جا سکتا ہے۔</li>
+                      <li>اردو ورسٹی کی رجسٹریشن یا Subscription کے موقعے پر آپ سے طلب کی جانے والی ذاتی معلومات کسی Third Party کے ساتھ شیئر نہیں کی جائیں گی۔</li>
+                      <li>آپ کی ذاتی معلومات مثلاً فون نمبر، ای میل ایڈریس یا کالج/ یونی ورسٹی اور ادارے وغیرہ کے نام کا حصول صرف حقیقی افراد یا اشخاص کی رجسٹریشن کو یقینی بنانے کے لیے اور یہ جاننے کے لیے ہے کہ ہماری ویب سائٹ پر آنے والے زیادہ افراد کا تعلق کن اداروں، شہروں اور ملکوں سے ہے نیز گاہے گاہے ویب سائٹ کے بارے میں آپ کو نئی معلومات، خدمات اور واقعات سے آگاہی فراہم کرنا ہے۔</li>
+                    <!-- </ul> -->
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-light btn-custome text-light ">بھیجیں</button>
+      </form>
+
+    </div>
+
+
+
+  </div>
+
+  <%- include("partials/footer"); -%>

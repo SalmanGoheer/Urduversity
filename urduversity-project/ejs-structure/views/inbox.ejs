@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+<%- include("partials/mininav"); -%>
+
+<div class="center-ceontent">
+    <h1 class="mb-5 text-center">Inbox</h1>
+
+    <% inboxItems.reverse().forEach(function(item) { %>
+        <div class="composed-post">
+          <p><%= item.date %></p>
+        <p>نام: <%= item.name %></p>
+        <p>فون: <%= item.phone %></p>
+        <p>ای میل: <%= item.email %></p>
+        <p>مقصد:
+            <% if (item.purpose === 'flexRadioDefault1') { %>تجویز/مشورہ<% } %>
+            <% if (item.purpose === 'flexRadioDefault2') { %>اپنی کتاب/مضمون کی اردو ورسٹی میں اشاعت<% } %>
+            <% if (item.purpose === 'flexRadioDefault3') { %>کسی مشاعرے، لیکچر یا کانفرنس وغیرہ کی ویڈیو ارسال کرنا<% } %>
+            <% if (item.purpose === 'flexRadioDefault4') { %>دیگر<% } %>
+         </p>
+         <p>پیغام: <%= item.message %></p> 
+         <% if (item.uploadedFilePath) { %>
+             <p>Uploaded File: <a href="/uploads/<%= item.uploadedFilePath %>">Download</a></p>
+           <% } %>
+        </div>
+      <% }); %>
+</div>
+
+
+<%- include("partials/footer"); -%>

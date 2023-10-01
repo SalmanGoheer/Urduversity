@@ -1,0 +1,20 @@
+<%- include("partials/header"); -%>
+<div class="center-ceontent">
+<h1 class="mb-5 text-center" >ادب اور مذہب	</h1>
+
+<div id="literatureandreligion">
+    <% literatureReligionPosts.reverse().forEach(function(post){ %>
+        <div class="composed-post">
+            <h2 class="mb-3 mt-3">
+                <%= post.title %>
+            </h2>
+            <p>
+                <%= post.content.substring(0, 100) + '...' %>
+                    <a href="/literatureandreligion/<%- post.title -%>">read more</a>
+            </p>
+        </div>
+        <% }) %>
+</div>
+
+</div>
+<%- include("partials/footer"); -%>

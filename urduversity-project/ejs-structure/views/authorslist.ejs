@@ -1,0 +1,20 @@
+ <%- include("partials/header"); -%>
+    <div class="center-ceontent">
+            <h1 class="mb-5 text-center">ناشرینِ کتب</h1>
+            <div id="authorslist">
+            <div class="composed-post-list">
+                <% authorsListPosts.reverse().forEach(function(post){ %>
+                <div class="card-list">
+                    <h2 class="mb-4">
+                        <%= post.title %>
+                    </h2>
+                    <p>
+                        <%= post.content.substring(0, 100) + '...' %>
+                            <a href="/authorslist/<%- post.title -%>">مزید پڑھیں</a>
+                    </p>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+<%- include("partials/footer"); -%>

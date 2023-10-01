@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+  <div class="center-ceontent">
+    <h1 class="mb-5 text-center">frontbanner</h1>
+
+    <div id="frontbanner">
+      <% frontbanner.reverse().forEach(function(post) { %>
+        <div class="composed-post">
+          <h2 class="mb-3 mt-3">
+            <a class="hrefText" href="/frontbanner/<%- post.title -%>">
+              <%= post.title %>
+          </a>
+          </h2>
+          <p>
+            <%= post.content %>
+          </p>
+        </div>
+    </div>
+    <% }); %>
+  </div>
+  </div>
+  <%- include("partials/footer"); -%>

@@ -1,0 +1,66 @@
+<%- include("partials/header"); -%>
+<%- include("partials/mininav"); -%>
+
+    
+    
+    <div class="center-ceontent from-group">
+        <h1>Compose</h1>
+    <form action="/compose" method="post">
+        <div>
+            <label for="title">عنوان</label> <br>
+            <input class="form-control"  type="text" name="postTitle">
+        </div>
+        <div>
+            <label for="post">مواد</label> <br>
+            <textarea id="userInput" class="form-control"  name="postContent" cols="30" rows="5"></textarea>
+        </div>
+
+        <div>
+            <label for="title">ویڈیو منتخب کریں</label> <br>
+            <!-- <input type="file" name="postVideo" accept="video/*">  -->
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*, video/*, .pdf">
+
+
+        </div>
+        
+        <div>
+            <label for="category">Category</label>
+            <select class="form-control pt-0 pb-0" name="category" required>
+                <option selected disabled style="background: #EFE1D1;">صفحہ منتخب کریں</option>
+                <option value="frontbanner">فرنٹ بینر</option>
+                <option value="akhbar">ادبی اخبار</option>
+                <option value="authors">مصنفین</option>
+                <option value="letters">رسائل</option>
+                <option value="books">کتب</option>
+                <option value="criticism">تنقید</option>
+                <option value="easterncriticism">مشرقی تنقید</option>
+                <option value="westerncriticism">مغربی تنقید</option>
+                <option value="linguistics">لسانیات</option>
+                <option value="psychology">ساخیات</option>
+                <option value="cultureandcivilization">تہذیب و ثقافت</option>
+                <option value="contemporaryissues">جدید مباحث</option>
+                <option value="progressivemovement">ترقی پسند تحریک​ و تنقید</option>
+                <option value="psychologicacriticism">نفسیاتی تنقید</option>
+                <option value="Philosophy">فلسفہ</option>
+                <option value="iqbalstudies">اقبالیات</option>
+                <option value="literatureandreligion">ادب اور مذہب</option>
+                <option value="personalities">شخصیات</option>
+                <option value="supplementaryliterature">اضاف ادب</option>
+                <option disabled style="background: #EFE1D1;">ہوم پیج کے لیے سیکشن کا انتخاب کریں</option>
+                <option value="interviews">انٹرویوز</option>
+                <option value="lectures">لیکچرز</option>
+                <option value="videos">ویڈیوز</option>
+                <option disabled style="background: #EFE1D1;">فہرست کا انتخاب کریں</option>
+                <option value="bookslist">فہرست کتب</option>
+                <option value="authorslist">ناشرینِ کتب</option>
+            </select>
+        </div>
+        
+
+        <button class="btn btn-dark m-2" type="submit" name="button">شائع کریں</button>
+    </form>
+</div>
+    <%- include("partials/footer"); -%>
+
+
+    

@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+<!-- admin/posts.ejs -->
+<h1>Admin Posts</h1>
+<ul>
+  <% Post.forEach((post) => { %>
+    <li>
+      <strong>Title:</strong> <%= post.title %>
+      <br>
+      <strong>Category:</strong> <%= post.category %>
+      <br>
+      <a href="/admin/delete/<%= post._id %>">Delete</a>
+    </li>
+  <% }) %>
+</ul>
+<%- include("partials/footer"); -%>
